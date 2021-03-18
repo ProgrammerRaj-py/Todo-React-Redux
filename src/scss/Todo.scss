@@ -1,0 +1,190 @@
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoContainer{
+    max-width: 700px;
+    width: 90%;
+    height: 80%;
+    box-shadow: 0 0 20px #cdcdcd;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+
+    form{
+        width: 100%;
+        height: 7vh;
+        box-shadow: 0 0 10px #cdcdcd;
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        
+        input{
+            width: 90%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-radius: 20px 0 0 0;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            color: #222;
+            font-weight: 500;
+        }
+        button{
+            width: 10%;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+
+            i{
+                font-size: 1.3rem;
+                color: #0d9a0d;
+            }
+        }
+    }
+
+    .contents{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        padding: 1rem;
+        position: relative;
+
+        .noTodo{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .appName{
+                color: #0d9a0d;
+                font-size: 4rem;
+                margin-top: 3rem;
+            }
+            .noTodoHere{
+                font-weight: 200;
+                margin-top: 5rem;
+                text-align: center;
+
+                span{
+                    font-size: 2.2rem;
+                    font-weight: 700;
+                    color: #0d9a0d;
+                }
+            }
+            i{
+                font-size: 5rem;
+                margin-top: 3rem;
+                color: #0d9a0d;
+            }
+            .developer{
+                position: absolute;
+                bottom: 2%;
+                right: 3%;
+                color: #b6b6b6;
+            }
+        }
+
+        .content{
+            width: 100%;
+            box-shadow: 0 0 10px #cdcdcd;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+
+            .title{
+                font-size: 1.5rem;
+                font-weight: 400;
+                width: 85%;
+                height: 100%;
+                text-transform: capitalize;
+
+                span{
+                    margin-right: 0.5rem;
+                    font-weight: 600;
+                    color: gray;
+                }
+            }
+            .title.line_through{
+                text-decoration-line: line-through;
+                color: #aeaeae;
+                font-weight: 500;
+            }
+            
+            .controls{
+                width: 15%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                i{
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    transition: 0.5s;
+                }
+                i:hover{
+                    transform: scale(1.4);
+                }
+                i.fa-check-circle{
+                    color: #0d9a0d;
+                }
+                i.fa-trash{
+                    color: #f23312;
+                }
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 786px){
+    .todoContainer{
+        .contents{
+            .content{
+                .title{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    
+}
+@media only screen and (max-width: 476px){
+    .todoContainer{
+        .contents{
+            .noTodo{
+                .appName{
+                    font-size: 2rem;
+                }
+                .noTodoHere{
+                    font-size: 1.5rem;
+                }
+                i{
+                    font-size: 4rem;
+                }
+            }
+            .content{
+                .title{
+                    font-size: 1rem;
+                    width: 70%;
+                }
+                .controls{
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
