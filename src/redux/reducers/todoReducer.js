@@ -1,7 +1,13 @@
 import { ADD_TODO, DELETE_TODO, COMPLETE_TODO } from '../constrains'
 
+const db = () =>{
+    if(typeof localStorage.rajmazumdertodo !== "undefined"){
+        return JSON.parse(localStorage.rajmazumdertodo)
+    }
+    return []
+}
 const intialstate = {
-    todoData: []
+    todoData: db()
 }
 export const todoReducer = (state = intialstate, action) => {
     let todos

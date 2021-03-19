@@ -1,11 +1,11 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import '../scss/Todo.scss'
 import { addTodo, deleteTodo, completeTodo } from '../redux/actions'
 import { connect } from 'react-redux'
 import nextId from 'react-id-generator'
 
 const mapStateToProps = state =>{
-    // console.log(state.Todo.todoData)
+    console.log(state.Todo.todoData)
     return {
         data: state.Todo.todoData
     }
@@ -19,6 +19,10 @@ const mapDispatchToProps = dispatch =>{
 }
 
 const Todo = (props) => {
+    useEffect(() => {
+        localStorage.setItem("rajmazumdertodo", JSON.stringify(props.data))
+    }, [props.data])
+
     const titleRef = useRef()
     const onSubmit = e => {
         e.preventDefault()
