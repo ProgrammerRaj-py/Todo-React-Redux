@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import nextId from 'react-id-generator'
 
 const mapStateToProps = state =>{
-    console.log(state.Todo.todoData)
+    // console.log(state.Todo.todoData)
     return {
         data: state.Todo.todoData
     }
